@@ -1,10 +1,83 @@
-.wrapper {
-    max-width: 100%;
-    max-height: 100%;
+@import url("https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700");
+
+@font-face {
+  font-family: "DIN Condensed Bold";
+  font-style: normal;
+  font-weight: normal;
+  src: local("DIN Condensed Bold"),
+    url("../assets/font/din-condensed-cufonfonts-webfont/DINCondensed-Bold.woff") format("woff");
 }
-.curved-background {
-    box-sizing: border-box;
-    height: 100vh;
-    width: auto;
-    background: linear-gradient(180deg, #000 0%, #7ACA3A 57%, #65B529 62%, #3D681A 74%, #092228 100%);
+
+.wrapper {
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 1rem;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.curved-background-green {
+  background: linear-gradient(180deg, #000 0%, #7aca3a 57%, #65b529 62%, #3d681a 74%, #092228 100%);
+}
+
+.curved-background-blue {
+  background: linear-gradient(180deg, #000 0%, #2aa0c8 57%, #3bb4dd 61%, #2499bf 74%, #092228 100%);
+}
+
+.content-wrapper {
+  box-sizing: border-box;
+  height: 100vh;
+  width: auto;
+  position: relative;
+  color: rgba($color: #ffffff, $alpha: 1);
+
+  .top-bar {
+    .left-side,
+    .right-side {
+      margin: 33.5px 20px 0;
+    }
+
+    .my-icon {
+      font-size: 20px;
+    }
+
+    .left-side {
+    }
+
+    .right-side {
+      text-align: right;
+
+      div {
+        text-transform: uppercase;
+        display: inline-block;
+      }
+
+      .cart-icon {
+        margin-left: 53px;
+      }
+
+      .my-account-text {
+        margin-left: 25px;
+      }
+
+      .find-text {
+        margin-left: 73px;
+      }
+    }
   }
+
+  .convertion-zone {
+    position: absolute;
+    top: 240px;
+    right: 99px;
+
+    .brand {
+      font-size: 14px;
+      margin-bottom: 4px;
+    }
+    .item {
+			text-transform: uppercase;
+      font-size: 38px;
+      font-family: "DIN Condensed Bold", "sans-serif";
+    }
+  }
+}
