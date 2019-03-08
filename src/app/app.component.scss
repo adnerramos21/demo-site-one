@@ -104,12 +104,22 @@
     }
 
     .color-picker {
-			margin-bottom: 67px;
-			position: relative;
+      margin-bottom: 67px;
+      position: relative;
 
       div {
         display: inline-block;
       }
+
+      // .timeline-item::after {
+      //   content: "";
+      //   position: absolute;
+      //   top: 45px;
+      //   bottom: 0;
+      //   left: 20px;
+      //   width: 1px;
+      //   background-color: rgba(0, 0, 0, 0.12);
+      // }
 
       .circle {
         box-sizing: border-box;
@@ -121,11 +131,18 @@
         border-radius: 50%;
       }
 
-      .circle::after {
-				// content: "";
-				// position: absolute;
-        // width: 2px;
-        // background-color: #fff;
+      span {
+        content: "";
+        position: absolute;
+        width: 50px;
+        background-color: #fff;
+        top: 15px;
+        height: 2px;
+        left: 32px;
+      }
+
+      span:nth-last-child(2) {
+        left: 114px;
       }
 
       .active {
@@ -142,7 +159,26 @@
 
       .pink {
         background-color: #f065d2;
-      }
-    }
+      }      
+		}
+		
+		.shop-now-button {
+			max-height: 40px;
+			max-width: 125px;
+
+			button {
+				border: none;
+				background: transparent;
+				background-color: #ffea28;
+				width: 125px;
+				height: 40px;
+				font-family: "Roboto Condensed", sans-serif;
+				font-weight: bold;
+				text-align: center;
+				font-size: 1rem;
+			}
+		}
+
+		
   }
 }
