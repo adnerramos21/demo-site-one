@@ -21,6 +21,15 @@
       </div>
     </div>
 
+    <div fxLayout="row" class="content">
+      <ol>
+        <li><img src="../assets/image/watch-1.jpg" alt="1"></li>
+        <!-- <li><img src="../assets/image/watch-2.jpg" alt="2"></li>
+        <li><img src="../assets/image/watch-3.jpg" alt="3"></li> -->
+      </ol>
+    </div>
+
+    <!-- /////////////////// CONVERTION ZONE ////////////////////// -->
     <div class="convertion-zone">
       <div class="brand">
         NABAIJI
@@ -36,7 +45,7 @@
           </span>
         </div>
       </div>
-      <div class="color-picker">
+      <div class="color-picker" [ngClass]="{'hide': !isVisible}">
         <div class="circle blue active"></div>
         <span></span>
         <div class="circle black"></div>
@@ -44,7 +53,7 @@
         <div class="circle pink"></div>
       </div>
       <div class="shop-now-button">
-        <button>Shop Now</button>
+        <button (click)="shopNow()">Shop Now</button>
       </div>
     </div>
 

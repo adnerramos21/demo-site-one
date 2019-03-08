@@ -65,6 +65,24 @@
     }
   }
 
+  .content {
+    margin-top: 10%;
+
+    ol {
+      list-style: none;
+      margin: 0;
+
+      li {
+        margin-left: 13%;
+
+        img {
+          max-width: 50%;
+          width: 40%;
+        }
+      }
+    }
+  }
+
   .convertion-zone {
     position: absolute;
     top: 240px;
@@ -111,17 +129,8 @@
         display: inline-block;
       }
 
-      // .timeline-item::after {
-      //   content: "";
-      //   position: absolute;
-      //   top: 45px;
-      //   bottom: 0;
-      //   left: 20px;
-      //   width: 1px;
-      //   background-color: rgba(0, 0, 0, 0.12);
-      // }
-
       .circle {
+        opacity: 1;
         box-sizing: border-box;
         border: 1px solid #fff;
         background-color: #cccccc;
@@ -159,26 +168,41 @@
 
       .pink {
         background-color: #f065d2;
-      }      
-		}
-		
-		.shop-now-button {
-			max-height: 40px;
-			max-width: 125px;
+      }
+    }
 
-			button {
-				border: none;
-				background: transparent;
-				background-color: #ffea28;
-				width: 125px;
-				height: 40px;
-				font-family: "Roboto Condensed", sans-serif;
-				font-weight: bold;
-				text-align: center;
-				font-size: 1rem;
-			}
-		}
+    .shop-now-button {
+      max-height: 40px;
+      max-width: 125px;
 
-		
+      button {
+        border: none;
+        background: transparent;
+        background-color: #ffea28;
+        width: 125px;
+        height: 40px;
+        font-family: "Roboto Condensed", sans-serif;
+        font-weight: bold;
+        text-align: center;
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+// Animation
+.content-wrapper {
+  .convertion-zone {
+    .color-picker.hide {
+      .circle:not(.active) {
+        opacity: 0;
+        transition: opacity 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+      }
+
+      span {
+        opacity: 0;
+        transition: opacity 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+      }
+    }
   }
 }

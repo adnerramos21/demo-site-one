@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'site-demo-one';
+
+  isVisible = true;
+
+  shopNow() {
+    this.hideColorPicker();
+  }
+
+  hideColorPicker() {
+    this.isVisible = false;
+  }
 }
