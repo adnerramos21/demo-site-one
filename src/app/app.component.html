@@ -22,6 +22,9 @@
     </div>
 
     <div fxLayout="row" class="content">
+      <div class="back-button" (click)="goBack()" [@showHide]="!isVisible ? 'show' : 'hide'">
+        <i class="fas fa-arrow-left"></i>
+      </div>
       <ol>
         <li><img src="../assets/image/watch-1.jpg" alt="1"></li>
         <!-- <li><img src="../assets/image/watch-2.jpg" alt="2"></li>
@@ -45,16 +48,39 @@
           </span>
         </div>
       </div>
-      <div class="color-picker" [ngClass]="{'hide': !isVisible}">
+
+      <div class="color-picker" [@showHide]="isVisible ? 'show' : 'hide'">
         <div class="circle blue active"></div>
         <span></span>
         <div class="circle black"></div>
         <span></span>
         <div class="circle pink"></div>
       </div>
-      <div class="shop-now-button">
+
+      <div class="size-select" [@showHide]="!isVisible ? 'show' : 'hide'">
+        <div class="select-text">Select Your Size</div>
+        <div class="sizes">
+          <div>
+            <span>S</span>
+          </div>
+          <div>
+            <span>M</span>
+          </div>
+          <div>
+            <span>L</span>
+          </div>
+          <div class="size-guide-icon">
+            <img src="../assets/image/size-guide.png">
+          </div>
+        </div>
+      </div>
+
+      <div class="shop-now-button" [@slideUpDown]="isVisible ? 'up' : 'down'">
         <button (click)="shopNow()">Shop Now</button>
       </div>
+      <!-- <div class="buy-now-button" [@showHide]="!isVisible ? 'show' : 'hide'">
+        <button (click)="shopNow()">Buy Now</button>
+      </div> -->
     </div>
 
   </div>
