@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { trigger, state, style, transition, animate, keyframes } from '@angular/animations';
+import { Component, HostBinding } from '@angular/core';
+import { trigger, state, style, transition, animate, keyframes, query, animateChild } from '@angular/animations';
 
 @Component({
   selector: 'app-root',
@@ -13,12 +13,9 @@ import { trigger, state, style, transition, animate, keyframes } from '@angular/
       state('hide', style({
         opacity: 0
       })),
-      transition('show => hide', [
+      transition('show <=> hide', [
         animate('.3s')
-      ]),
-      transition('hide => show', [
-        animate('.3s')
-      ]),
+      ])
     ]),
     trigger('slideUpDown', [
       state('up', style({
@@ -27,18 +24,33 @@ import { trigger, state, style, transition, animate, keyframes } from '@angular/
       state('down', style({
         transform: 'translateY(0)'
       })),
-      transition('up => down', [
+      transition('up <=> down', [
         animate('.5s ease-out'),
+      ])
+    ]),
+    trigger('colorPickerParentAnimation', [
+      transition('* <=> *', [
+        query('@colorPickerAnimation', animateChild())
       ]),
-      transition('down => up', [
-        animate('.5s ease-in')
-      ]),
-    ])
+    ]),
+    trigger('colorPickerAnimation', [
+      state('show', style({
+        opacity: 1
+      })),
+      state('hide', style({
+        opacity: 0
+      })),
+      transition('show <=> hide', [
+        animate('.3s')
+      ])
+    ]),
   ]
 })
 export class AppComponent {
 
   isVisible = true;
+  // @HostBinding('@colorPickerAnimation')
+  // @HostBinding('@colorPickerChildAnimation')
 
   shopNow() {
     this.hideColorPicker();

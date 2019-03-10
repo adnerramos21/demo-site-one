@@ -211,6 +211,10 @@
           }
         }
 
+        div.selected {
+          background-color: rgba($color: #ffffff, $alpha: 0.2);
+        }
+
         .size-guide-icon {
           border: none;
           position: absolute;
