@@ -1,5 +1,25 @@
 import { trigger, state, style, transition, animate, keyframes, query, animateChild } from '@angular/animations';
 
+export const mainAnimation = trigger('mainAnimation', [
+    transition('* <=> *', [
+        query('.content img', [
+            style({ transform: 'scale(1.3)' })
+        ])
+    ])
+]);
+
+export const scaleUpDown = trigger('scaleUpDown', [
+    state('scaleUp', style({
+        transform: 'scale(1.3)'
+    })),
+    state('scaleDown', style({
+        transform: 'scale(1)'
+    })),
+    transition('scaleUp <=> scaleDown', [
+        animate('.3s')
+    ])
+]);
+
 export const showHide = trigger('showHide', [
     state('show', style({
         opacity: 1
@@ -24,6 +44,7 @@ export const slideUpDown = trigger('slideUpDown', [
     ])
 ]);
 
+
 export const colorPickerParentAnimation = trigger('colorPickerParentAnimation', [
     transition('* <=> *', [
         query('@colorPickerAnimation', animateChild()),
@@ -41,3 +62,4 @@ export const colorPickerAnimation = trigger('colorPickerAnimation', [
         animate('.3s')
     ])
 ]);
+

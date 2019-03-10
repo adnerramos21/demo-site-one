@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
-import { showHide, slideUpDown, colorPickerParentAnimation, colorPickerAnimation } from './app.component.animation';
+import { showHide, slideUpDown, colorPickerParentAnimation, colorPickerAnimation, scaleUpDown } from './app.component.animation';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
   animations: [
+    scaleUpDown,
     showHide,
     slideUpDown,
     colorPickerParentAnimation,

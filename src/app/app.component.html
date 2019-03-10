@@ -1,5 +1,5 @@
 
-<div class="wrapper">
+<div class="wrapper" @mainAnimation>
   <div class="content-wrapper curved-background-blue">
     <div fxLayout="row" class="top-bar">
       <div fxFlex="50%" class="left-side">
@@ -28,7 +28,7 @@
         <i class="fas fa-arrow-left"></i>
       </div>
       <ol>
-        <li><img src="../assets/image/watch-1.jpg" alt="1"></li>
+        <li><img src="../assets/image/watch-1.jpg" alt="1" [@scaleUpDown]="isVisible ? 'scaleUp' : 'scaleDown'"></li>
         <!-- <li><img src="../assets/image/watch-2.jpg" alt="2"></li>
         <li><img src="../assets/image/watch-3.jpg" alt="3"></li> -->
       </ol>
