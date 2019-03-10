@@ -30,7 +30,8 @@ import { trigger, state, style, transition, animate, keyframes, query, animateCh
     ]),
     trigger('colorPickerParentAnimation', [
       transition('* <=> *', [
-        query('@colorPickerAnimation', animateChild())
+        style({ marginBottom: '30px' }),
+        query('@colorPickerAnimation', animateChild()),
       ]),
     ]),
     trigger('colorPickerAnimation', [
