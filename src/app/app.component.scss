@@ -23,8 +23,16 @@
   background: linear-gradient(180deg, #000 0%, #2aa0c8 57%, #3bb4dd 61%, #2499bf 84%, #092228 100%);
 }
 
-.curved-background-brown {
+.curved-background-chocolate {
   background: linear-gradient(180deg, #000 0%, #c74b20 57%, #df5525 75%, #092228 100%);
+}
+
+.curved-background-burlywood {
+  background: linear-gradient(180deg, #000 0%, #e1b277 57%, #d3b692 75%, #092228 100%);
+}
+
+.curved-background-sienna {
+  background: linear-gradient(180deg, #000 0%, #8e5f47 57%, #b8886f 75%, #092228 100%);
 }
 
 .content-wrapper {
@@ -33,6 +41,7 @@
   width: auto;
   position: relative;
   color: rgba($color: #ffffff, $alpha: 1);
+  // transition: background 500ms ease 0s;
 
   .top-bar {
     .left-side,
@@ -71,7 +80,6 @@
     top: 10%;
     left: 25%;
     font-size: 2.5rem;
-    z-index: 1;
   }
 
   .down {
@@ -79,7 +87,6 @@
     bottom: 27%;
     left: 25%;
     font-size: 2.5rem;
-    z-index: 1;
   }
 
   .content {
@@ -245,6 +252,18 @@
 
       .pink {
         background-color: #f065d2;
+      }
+
+      .chocolate {
+        background-color: #c74b20;
+      }
+
+      .burlywood {
+        background-color: #e1b277;
+      }
+
+      .sienna {
+        background-color: #8e5f47;
       }
     }
 

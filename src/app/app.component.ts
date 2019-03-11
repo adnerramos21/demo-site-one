@@ -17,6 +17,7 @@ export class AppComponent implements AfterViewInit {
 
   isVisible = true;
   slideIndex = 1;
+  backgroundColors = ['curved-background-chocolate', 'curved-background-burlywood', 'curved-background-sienna'];
 
   ngAfterViewInit(): void {
     this.showSlides(this.slideIndex);
@@ -48,7 +49,6 @@ export class AppComponent implements AfterViewInit {
 
   showSlides(n: number) {
     const slides = document.getElementsByClassName('mySlides');
-    const dots = document.getElementsByClassName('dot');
     const slideContainer = document.getElementsByClassName('slideshow-container') as any;
     let slideHeight = 0,
       calculateHeight = 0;
@@ -62,6 +62,13 @@ export class AppComponent implements AfterViewInit {
     calculateHeight = -(slideHeight * (this.slideIndex - 1));
 
     slideContainer[0].style.transform = 'translate3d(0px, ' + calculateHeight + 'px, 0px)';
+
+    this.changeBackgroundColor();
+  }
+
+  changeBackgroundColor() {
+    const contentWrapper = document.getElementsByClassName('content-wrapper');
+    contentWrapper[0].classList.replace(contentWrapper[0].className.split(' ')[1], this.backgroundColors[this.slideIndex - 1]);
   }
 
 }
