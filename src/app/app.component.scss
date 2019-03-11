@@ -20,7 +20,11 @@
 }
 
 .curved-background-blue {
-  background: linear-gradient(180deg, #000 0%, #2aa0c8 57%, #3bb4dd 61%, #2499bf 74%, #092228 100%);
+  background: linear-gradient(180deg, #000 0%, #2aa0c8 57%, #3bb4dd 61%, #2499bf 84%, #092228 100%);
+}
+
+.curved-background-brown {
+  background: linear-gradient(180deg, #000 0%, #c74b20 57%, #df5525 75%, #092228 100%);
 }
 
 .content-wrapper {
@@ -38,9 +42,6 @@
 
     .my-icon {
       font-size: 20px;
-    }
-
-    .left-side {
     }
 
     .right-side {
@@ -65,30 +66,95 @@
     }
   }
 
+  .up {
+    position: absolute;
+    top: 10%;
+    left: 25%;
+    font-size: 2.5rem;
+    z-index: 1;
+  }
+
+  .down {
+    position: absolute;
+    bottom: 27%;
+    left: 25%;
+    font-size: 2.5rem;
+    z-index: 1;
+  }
+
   .content {
-    margin-top: 10%;
+    margin-top: 7%;
 
     .back-button {
       position: absolute;
       left: 5%;
-      top: 20%;
+      top: 16%;
 
       i {
         font-size: 20px;
       }
     }
 
+    .slide-wrapper {
+      overflow: hidden;
+      max-height: 539px;
+      max-width: 500px;
+      width: 420px;
+      margin-left: 12%;
+
+      .slideshow-container {
+        position: relative;
+        transform: translate3d(0px, 0px, 0px);
+        transition: transform 500ms ease 0s;
+
+        .mySlides {
+          height: 100%;
+
+          img {
+            height: auto;
+            width: 100%;
+            margin-bottom: 10px;
+            max-height: 539px;
+          }
+        }
+      }
+    }
+
+    // ol {
+    //   list-style: none;
+    //   margin: 0;
+    //   padding: 0;
+    //   margin-left: 19%;
+
+    //   li {
+    //     display: inline-block;
+
+    //     img {
+    //       transform: scale(1.3);
+    //       max-width: 50%;
+    //       width: 40%;
+    //     }
+    //   }
+    // }
+  }
+
+  .thumbnail-content {
+    margin-top: 4%;
+    margin-left: 5.4%;
+
     ol {
       list-style: none;
+      padding: 0;
       margin: 0;
 
       li {
-        margin-left: 13%;
+        display: inline-block;
 
         img {
-          transform: scale(1.3);
-          max-width: 50%;
-          width: 40%;
+          max-width: 100%;
+          width: 211px;
+          height: 130px;
+          margin-right: 10px;
         }
       }
     }
@@ -96,8 +162,8 @@
 
   .convertion-zone {
     position: absolute;
-    top: 207px;
-    right: 99px;
+    top: 16%;
+    right: 10%;
 
     .brand {
       font-size: 14px;
@@ -220,7 +286,7 @@
           border: none;
           position: absolute;
           bottom: 0;
-          right: 48%;
+          left: 22%;
         }
       }
     }
