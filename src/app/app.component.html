@@ -83,12 +83,16 @@
         </div>
       </div>
 
-      <div class="color-picker" @colorPickerParentAnimation>
-        <div class="circle chocolate active"></div>
-        <span [@colorPickerAnimation]="isVisible ? 'show' : 'hide'"></span>
-        <div class="circle burlywood" [@colorPickerAnimation]="isVisible ? 'show' : 'hide'"></div>
-        <span [@colorPickerAnimation]="isVisible ? 'show' : 'hide'"></span>
-        <div class="circle sienna" [@colorPickerAnimation]="isVisible ? 'show' : 'hide'"></div>
+      <div class="color-picker">
+        <div #pickerElement class="circle chocolate color-picker-element" [ngClass]="{'active': selectedColor === 1}" (click)="currentSlide(1)"></div>
+
+        <span #pickerElement class="color-picker-element"></span>
+
+        <div #pickerElement class="circle burlywood color-picker-element" [ngClass]="{'active': selectedColor === 2}" (click)="currentSlide(2)"></div>
+
+        <span #pickerElement class="color-picker-element"></span>
+
+        <div #pickerElement class="circle sienna color-picker-element" [ngClass]="{'active': selectedColor === 3}" (click)="currentSlide(3)"></div>
       </div>
 
       <div class="size-select" [@showHide]="!isVisible ? 'show' : 'hide'">

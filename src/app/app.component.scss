@@ -205,7 +205,13 @@
         width: 32px;
         margin-right: 50px;
         border-radius: 50%;
+        transition: opacity .3s ease-out;
       }
+
+      .disappear {
+        opacity: 0;
+      }
+      
 
       span {
         content: "";
@@ -222,7 +228,7 @@
       }
 
       .active {
-        box-shadow: 0 0 10px 0 #e0e0e0;
+        box-shadow: 0 0 15px 6px #e0e0e0;
       }
 
       .blue {
