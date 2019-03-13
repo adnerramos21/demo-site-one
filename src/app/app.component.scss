@@ -15,24 +15,8 @@
   max-height: 100%;
 }
 
-.curved-background-green {
-  background: linear-gradient(180deg, #000 0%, #7aca3a 57%, #65b529 62%, #3d681a 74%, #092228 100%);
-}
-
-.curved-background-blue {
-  background: linear-gradient(180deg, #000 0%, #2aa0c8 57%, #3bb4dd 61%, #2499bf 84%, #092228 100%);
-}
-
-.curved-background-chocolate {
-  background: linear-gradient(180deg, #000 0%, #c74b20 57%, #df5525 75%, #092228 100%);
-}
-
-.curved-background-burlywood {
-  background: linear-gradient(180deg, #000 0%, #e1b277 57%, #d3b692 75%, #092228 100%);
-}
-
-.curved-background-sienna {
-  background: linear-gradient(180deg, #000 0%, #8e5f47 57%, #b8886f 75%, #092228 100%);
+.colored-background {
+  background-color: #df5525;
 }
 
 .content-wrapper {
@@ -41,7 +25,6 @@
   width: auto;
   position: relative;
   color: rgba($color: #ffffff, $alpha: 1);
-  // transition: background 500ms ease 0s;
 
   .top-bar {
     .left-side,
@@ -330,21 +313,4 @@
   }
 }
 
-// Animation
-// .content-wrapper {
-//   .convertion-zone {
-//     .color-picker.hide {
-//       margin-bottom: 37px;
 
-//       .circle:not(.active) {
-//         opacity: 0;
-//         transition: opacity 1s cubic-bezier(0.075, 0.82, 0.165, 1);
-//       }
-
-//       span {
-//         opacity: 0;
-//         transition: opacity 1s cubic-bezier(0.075, 0.82, 0.165, 1);
-//       }
-//     }
-//   }
-// }

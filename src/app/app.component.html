@@ -1,5 +1,5 @@
 <div class="wrapper">
-  <div class="content-wrapper curved-background-chocolate">
+  <div class="content-wrapper colored-background" #contentWrapper>
     <div fxLayout="row" class="top-bar">
       <div fxFlex="50%" class="left-side">
         <i class="fas fa-bars my-icon"></i>
@@ -22,7 +22,6 @@
     </div>
 
     <div fxLayout="row" class="content">
-      <!-- <router-outlet></router-outlet> -->
       <div class="back-button" (click)="goBack()" [@showHide]="!isVisible ? 'show' : 'hide'">
         <i class="fas fa-arrow-left"></i>
       </div>
@@ -35,12 +34,12 @@
 
 
       <div class="slide-wrapper">
-        <div class="slideshow-container">
-          <div class="mySlides">
+        <div class="slideshow-container" #slideshowContainer>
+          <div class="mySlides" #slide>
             <img src="../assets/image/headphones-1.jpg" alt="1" /> </div>
-          <div class="mySlides">
+          <div class="mySlides" #slide>
             <img src="../assets/image/headphones-2.jpg" alt="2" /> </div>
-          <div class="mySlides">
+          <div class="mySlides" #slide>
             <img src="../assets/image/headphones-3.jpg" alt="3" /> </div>
         </div>
       </div>
