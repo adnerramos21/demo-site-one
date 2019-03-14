@@ -24,11 +24,12 @@ export class AppComponent implements AfterViewInit {
   targetObjCopy: object;
   colors = ['rgba(223, 85, 37, .75)', 'rgba(225, 178, 119, .80)', 'rgba(142, 95, 71, .85)'];
   selectedColor = 1;
+  mySlides = [];
 
   constructor(private renderer: Renderer2) { }
 
   ngAfterViewInit(): void {
-    // this.showSlides(this.slideIndex);
+    this.currentSlide(this.slideIndex);
   }
 
   goBack(): void {
@@ -86,31 +87,31 @@ export class AppComponent implements AfterViewInit {
   }
 
   slideUp(n: number): void {
-    this.showSlides(this.slideIndex += n);
+    this.currentSlide(this.slideIndex += n);
   }
 
   slideDown(n: number): void {
-    this.showSlides(this.slideIndex -= n);
+    this.currentSlide(this.slideIndex -= n);
   }
 
   currentSlide(n: number): void {
-    this.selectedColor = n;
-    this.showSlides(this.slideIndex = n);
+    this.mySlides = this.slides.map(val => val.nativeElement);
+    console.log(this.mySlides);
+
+    if (n > this.mySlides.length) { this.slideIndex = 1; }
+
+    if (n < 1) { this.slideIndex = this.mySlides.length; }
+
+    this.selectedColor = this.slideIndex;
+    this.showSlides(this.slideIndex);
   }
 
   showSlides(n: number): void {
-    const mySlides = this.slides.map(val => val.nativeElement),
-      slideContainer = this.slideshowContainer.nativeElement;
+    const slideContainer = this.slideshowContainer.nativeElement;
 
-    let slideHeight = 0,
-      calculateHeight = 0;
+    let slideHeight = 0, calculateHeight = 0;
 
-
-    if (n > mySlides.length) { this.slideIndex = 1; }
-
-    if (n < 1) { this.slideIndex = mySlides.length; }
-
-    slideHeight = +window.getComputedStyle(mySlides[this.slideIndex - 1], null).getPropertyValue('height').slice(0, -2);
+    slideHeight = +window.getComputedStyle(this.mySlides[this.slideIndex - 1], null).getPropertyValue('height').slice(0, -2);
 
     calculateHeight = -(slideHeight * (this.slideIndex - 1));
 
