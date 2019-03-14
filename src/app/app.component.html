@@ -1,18 +1,19 @@
 <div class="wrapper">
   <div class="content-wrapper colored-background" #contentWrapper>
+
     <div fxLayout="row" class="top-bar">
       <div fxFlex="50%" class="left-side">
         <i class="fas fa-bars my-icon"></i>
       </div>
 
       <div fxFlex="50%" class="right-side">
-        <div class="search-icon">
+        <div class="search-icon" fxHide.lt-md>
           <i class="fas fa-search my-icon"></i>
         </div>
-        <div class="find-text">
+        <div class="find-text" fxHide.lt-md>
           Find a Local Store
         </div>
-        <div class="my-account-text">
+        <div class="my-account-text" fxHide.lt-md>
           My Account
         </div>
         <div class="cart-icon">
@@ -21,14 +22,16 @@
       </div>
     </div>
 
-    <div fxLayout="row wrap" class="content">
+    <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap.lt-md="35px" class="content">
 
       <div fxFlex="50%">
         <div class="back-button" (click)="goBack()" [@showHide]="!isVisible ? 'show' : 'hide'">
           <i class="fas fa-arrow-left"></i>
         </div>
 
-        <div class="slide-wrapper">
+        <div class="slide-wrapper" [ngStyle.lt-md]="{'marginLeft.%': !isVisible ? 5 : 0}">
+          <a class="up arrow" (click)="slideUp(1)" [@showHide]="isVisible ? 'show' : 'hide'"><i class="fas fa-angle-up"></i></a>
+
           <div class="slideshow-container" #slideshowContainer>
             <div class="mySlides" #slide [@scaleUpDown]="!isVisible ? 'scaleUp' : 'scaleDown'">
               <img src="../assets/image/headphones-1.jpg" alt="1" width="400" height="530" /> </div>
@@ -37,17 +40,17 @@
             <div class="mySlides" #slide [@scaleUpDown]="!isVisible ? 'scaleUp' : 'scaleDown'">
               <img src="../assets/image/headphones-3.jpg" alt="3" width="400" height="530" /> </div>
           </div>
+
+          <a class="down arrow" (click)="slideDown(1)" [@showHide]="isVisible ? 'show' : 'hide'"><i class="fas fa-angle-down"></i></a>
         </div>
 
-        <a class="next up" (click)="slideUp(1)" [@showHide]="isVisible ? 'show' : 'hide'"><i class="fas fa-angle-up"></i></a>
-        <a class="prev down" (click)="slideDown(1)" [@showHide]="isVisible ? 'show' : 'hide'"><i class="fas fa-angle-down"></i></a>
 
       </div>
 
 
       <!-- /////////////////// CONVERTION ZONE ////////////////////// -->
       <div fxFlex="50%">
-        <div class="convertion-zone">
+        <div class="convertion-zone" [ngStyle.lt-md]="{'margin-left.px': 25}">
           <div class="brand">
             SYMPHONIZED Wraith 2.0
           </div>
@@ -90,9 +93,6 @@
               <div>
                 <span>L</span>
               </div>
-              <!-- <div class="size-guide-icon">
-                <img src="../assets/image/size-guide.png">
-              </div> -->
             </div>
           </div>
 
@@ -105,7 +105,7 @@
             </button>
           </div>
 
-          <div fxLayout="row" class="thumbnail-content" [@showHide]="!isVisible ? 'show' : 'hide'">
+          <div fxLayout="row" class="thumbnail-content" [ngStyle.lt-md]="{'margin-bottom.px': 20}" [@showHide]="!isVisible ? 'show' : 'hide'">
             <div>
               <ol>
                 <li>
@@ -124,7 +124,6 @@
         </div>
 
       </div>
-
 
     </div>
 

@@ -1,6 +1,6 @@
-import { Component, AfterViewInit, ViewChild, ElementRef, Renderer2, ViewChildren, QueryList } from '@angular/core';
+import { Component, AfterViewInit, ViewChild, Renderer2, ViewChildren, QueryList } from '@angular/core';
 import { showHide, slideUpDown, scaleUpDown } from './app.component.animation';
-import { TweenLite, Power2 } from 'gsap/TweenMax';
+import { TweenLite } from 'gsap/TweenMax';
 
 @Component({
   selector: 'app-root',
@@ -28,7 +28,7 @@ export class AppComponent implements AfterViewInit {
   constructor(private renderer: Renderer2) { }
 
   ngAfterViewInit(): void {
-    this.showSlides(this.slideIndex);
+    // this.showSlides(this.slideIndex);
   }
 
   goBack(): void {
@@ -41,7 +41,7 @@ export class AppComponent implements AfterViewInit {
     this.hideUnselectedColorElements();
   }
 
-  setVisibility() {
+  setVisibility(): void {
     this.isVisible = !this.isVisible;
   }
 
@@ -81,8 +81,7 @@ export class AppComponent implements AfterViewInit {
 
   moveObjectToTargetPosition(targetObj: object, calculatedTargetDistance: number): void {
     TweenLite.to(targetObj, 1, {
-      transform: `translate3d(-${calculatedTargetDistance}px, 0px, 0px)`,
-      ease: Power2.easeInOut
+      transform: `translate3d(-${calculatedTargetDistance}px, 0px, 0px)`
     });
   }
 

@@ -1,22 +1,16 @@
-import { trigger, state, style, transition, animate, keyframes, query, animateChild } from '@angular/animations';
-
-export const mainAnimation = trigger('mainAnimation', [
-    transition('* <=> *', [
-        query('.content img', [
-            style({ transform: 'scale(1.3)' })
-        ])
-    ])
-]);
+import { trigger, state, style, transition, animate } from '@angular/animations';
 
 export const scaleUpDown = trigger('scaleUpDown', [
     state('scaleUp', style({
-        transform: 'scale(1)'
+        transform: 'scale(1)',
+        marginBottom: '5px'
     })),
     state('scaleDown', style({
-        transform: 'scale(0.8)'
+        transform: 'scale(0.8)',
+        marginBottom: '0'
     })),
     transition('scaleUp <=> scaleDown', [
-        animate('.5s ease-out')
+        animate('.5s')
     ])
 ]);
 
@@ -36,32 +30,12 @@ export const showHide = trigger('showHide', [
 
 export const slideUpDown = trigger('slideUpDown', [
     state('up', style({
-        transform: 'translateY(-100px)'
+        transform: 'translateY(-80px)'
     })),
     state('down', style({
         transform: 'translateY(0)'
     })),
     transition('up <=> down', [
-        animate('.5s ease-out'),
+        animate('.5s'),
     ])
 ]);
-
-
-export const colorPickerParentAnimation = trigger('colorPickerParentAnimation', [
-    transition('* <=> *', [
-        query('@colorPickerAnimation', animateChild()),
-    ]),
-]);
-
-export const colorPickerAnimation = trigger('colorPickerAnimation', [
-    state('show', style({
-        opacity: 1
-    })),
-    state('hide', style({
-        opacity: 0
-    })),
-    transition('show <=> hide', [
-        animate('.3s')
-    ])
-]);
-

@@ -13,21 +13,20 @@
   font-size: 1rem;
   width: 100%;
   height: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
-.colored-background {
-  background-color: rgba(223, 85, 37, 0.75);
-}
 
 .content-wrapper {
-  box-sizing: border-box;
-  height: 100vh;
-  width: auto;
+  box-sizing: inherit;
+  height: 100%;
   position: relative;
   color: rgba($color: #ffffff, $alpha: 1);
+  overflow-x: hidden;
 
   .top-bar {
-    padding: 33.5px 20px 0;
+    padding: 20px 20px 0;
 
     .my-icon {
       font-size: 20px;
@@ -55,18 +54,20 @@
     }
   }
 
-  .up {
+  .arrow {
     position: absolute;
-    top: -1%;
-    left: 26%;
     font-size: 2.5rem;
+    z-index: 1;
+  }
+
+  .up {
+    top: -1%;
+    left: 49%;
   }
 
   .down {
-    position: absolute;
     bottom: 0;
-    left: 26%;
-    font-size: 2.5rem;
+    left: 49%;
   }
 
   .content {
@@ -74,8 +75,9 @@
     position: relative;
 
     .back-button {
+      cursor: pointer;
       position: absolute;
-      left: 2%;
+      left: 3%;
       top: -7px;
       padding: 6px;
       z-index: 1;
@@ -90,10 +92,8 @@
       overflow: hidden;
       max-height: 514px;
       text-align: center;
-      margin-left: 5%;
 
       .slideshow-container {
-        position: relative;
         transform: translate3d(0px, 0px, 0px);
         transition: transform 500ms ease 0s;
 
@@ -105,34 +105,14 @@
             height: auto;
             width: 100%;
             max-width: 400px;
-            margin-bottom: 10px;
+            max-height: 507px;
           }
         }
       }
     }
-
-    // ol {
-    //   list-style: none;
-    //   margin: 0;
-    //   padding: 0;
-    //   margin-left: 19%;
-
-    //   li {
-    //     display: inline-block;
-
-    //     img {
-    //       transform: scale(1.3);
-    //       max-width: 50%;
-    //       width: 40%;
-    //     }
-    //   }
-    // }
   }
 
   .thumbnail-content {
-    // margin-top: 4%;
-    // margin-left: 5.4%;
-
     ol {
       list-style: none;
       padding: 0;
@@ -152,10 +132,6 @@
   }
 
   .convertion-zone {
-    // position: absolute;
-    // top: 16%;
-    // right: 10%;
-
     .brand {
       font-size: 14px;
       margin-bottom: 4px;
@@ -253,7 +229,7 @@
       margin-bottom: 30px;
 
       .select-text {
-        margin-bottom: 17px;
+        margin-bottom: 5px;
       }
 
       .sizes {
@@ -296,6 +272,7 @@
       margin-bottom: 20px;
 
       button {
+        cursor: pointer;
         background: transparent;
         background-color: rgba(255, 255, 255, 0.4);
         border: 1px solid #0b6787;
@@ -310,4 +287,10 @@
       }
     }
   }
+}
+
+
+
+.colored-background {
+  background-color: rgba(223, 85, 37, 0.75);
 }
