@@ -1,6 +1,6 @@
 import { Component, AfterViewInit, ViewChild, ElementRef, Renderer2, ViewChildren, QueryList } from '@angular/core';
 import { showHide, slideUpDown, scaleUpDown } from './app.component.animation';
-import { TweenLite, TimelineMax } from 'gsap/TweenMax';
+import { TweenLite, Power2 } from 'gsap/TweenMax';
 
 @Component({
   selector: 'app-root',
@@ -81,7 +81,8 @@ export class AppComponent implements AfterViewInit {
 
   moveObjectToTargetPosition(targetObj: object, calculatedTargetDistance: number): void {
     TweenLite.to(targetObj, 1, {
-      transform: `translate3d(-${calculatedTargetDistance}px, 0px, 0px)`
+      transform: `translate3d(-${calculatedTargetDistance}px, 0px, 0px)`,
+      ease: Power2.easeInOut
     });
   }
 

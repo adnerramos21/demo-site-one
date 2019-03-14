@@ -21,109 +21,111 @@
       </div>
     </div>
 
-    <div fxLayout="row" class="content">
-      <div class="back-button" (click)="goBack()" [@showHide]="!isVisible ? 'show' : 'hide'">
-        <i class="fas fa-arrow-left"></i>
-      </div>
+    <div fxLayout="row wrap" class="content">
 
-      <!-- [@scaleUpDown]="isVisible ? 'scaleUp' : 'scaleDown'">
-
-[@scaleUpDown]="isVisible ? 'scaleUp' : 'scaleDown'">
-
-[@scaleUpDown]="isVisible ? 'scaleUp' : 'scaleDown'"> -->
-
-
-      <div class="slide-wrapper">
-        <div class="slideshow-container" #slideshowContainer>
-          <div class="mySlides" #slide>
-            <img src="../assets/image/headphones-1.jpg" alt="1" /> </div>
-          <div class="mySlides" #slide>
-            <img src="../assets/image/headphones-2.jpg" alt="2" /> </div>
-          <div class="mySlides" #slide>
-            <img src="../assets/image/headphones-3.jpg" alt="3" /> </div>
+      <div fxFlex="50%">
+        <div class="back-button" (click)="goBack()" [@showHide]="!isVisible ? 'show' : 'hide'">
+          <i class="fas fa-arrow-left"></i>
         </div>
-      </div>
 
-      <a class="next up" (click)="slideUp(1)" [@showHide]="isVisible ? 'show' : 'hide'"><i class="fas fa-angle-up"></i></a>
-      <a class="prev down" (click)="slideDown(1)" [@showHide]="isVisible ? 'show' : 'hide'"><i class="fas fa-angle-down"></i></a>
-
-    </div>
-
-
-    <div fxLayout="row" class="thumbnail-content" [@showHide]="!isVisible ? 'show' : 'hide'">
-      <div>
-        <ol>
-          <li>
-            <img src="../assets/image/headphone-usage-1.jpg" alt="headphone-usage-1">
-          </li>
-          <li>
-            <img src="../assets/image/headphone-usage-2.jpg" alt="headphone-usage-2">
-          </li>
-          <li>
-            <img src="../assets/image/headphone-usage-3.jpg" alt="headphone-usage-3">
-          </li>
-        </ol>
-      </div>
-    </div>
-
-    <!-- /////////////////// CONVERTION ZONE ////////////////////// -->
-    <div class="convertion-zone">
-      <div class="brand">
-        SYMPHONIZED Wraith 2.0
-      </div>
-      <div class="item">
-        Premium Genuine Wood Over-Ear Headphones
-      </div>
-      <div class="price-wrapper">
-        <div>From</div>
-        <div class="price">
-          <span>
-            $64.99
-          </span>
+        <div class="slide-wrapper">
+          <div class="slideshow-container" #slideshowContainer>
+            <div class="mySlides" #slide [@scaleUpDown]="!isVisible ? 'scaleUp' : 'scaleDown'">
+              <img src="../assets/image/headphones-1.jpg" alt="1" width="400" height="530" /> </div>
+            <div class="mySlides" #slide [@scaleUpDown]="!isVisible ? 'scaleUp' : 'scaleDown'">
+              <img src="../assets/image/headphones-2.jpg" alt="2" width="400" height="530" /> </div>
+            <div class="mySlides" #slide [@scaleUpDown]="!isVisible ? 'scaleUp' : 'scaleDown'">
+              <img src="../assets/image/headphones-3.jpg" alt="3" width="400" height="530" /> </div>
+          </div>
         </div>
+
+        <a class="next up" (click)="slideUp(1)" [@showHide]="isVisible ? 'show' : 'hide'"><i class="fas fa-angle-up"></i></a>
+        <a class="prev down" (click)="slideDown(1)" [@showHide]="isVisible ? 'show' : 'hide'"><i class="fas fa-angle-down"></i></a>
+
       </div>
 
-      <div class="color-picker">
-        <div #pickerElement class="circle chocolate color-picker-element" [ngClass]="{'active': selectedColor === 1}"
-          (click)="currentSlide(1)"></div>
 
-        <span #pickerElement class="color-picker-element"></span>
-
-        <div #pickerElement class="circle burlywood color-picker-element" [ngClass]="{'active': selectedColor === 2}"
-          (click)="currentSlide(2)"></div>
-
-        <span #pickerElement class="color-picker-element"></span>
-
-        <div #pickerElement class="circle sienna color-picker-element" [ngClass]="{'active': selectedColor === 3}"
-          (click)="currentSlide(3)"></div>
-      </div>
-
-      <div class="size-select" [@showHide]="!isVisible ? 'show' : 'hide'">
-        <div class="select-text">Select Your Size</div>
-        <div class="sizes">
-          <div class="selected">
-            <span>S</span>
+      <!-- /////////////////// CONVERTION ZONE ////////////////////// -->
+      <div fxFlex="50%">
+        <div class="convertion-zone">
+          <div class="brand">
+            SYMPHONIZED Wraith 2.0
           </div>
-          <div>
-            <span>M</span>
+          <div class="item">
+            Premium Genuine Wood Over-Ear Headphones
           </div>
-          <div>
-            <span>L</span>
+          <div class="price-wrapper">
+            <div>FROM</div>
+            <div class="price">
+              <span>
+                $64.99
+              </span>
+            </div>
           </div>
-          <!-- <div class="size-guide-icon">
-            <img src="../assets/image/size-guide.png">
-          </div> -->
+
+          <div class="color-picker">
+            <div #pickerElement class="circle chocolate color-picker-element" [ngClass]="{'active': selectedColor === 1}"
+              (click)="currentSlide(1)"></div>
+
+            <span #pickerElement class="color-picker-element"></span>
+
+            <div #pickerElement class="circle burlywood color-picker-element" [ngClass]="{'active': selectedColor === 2}"
+              (click)="currentSlide(2)"></div>
+
+            <span #pickerElement class="color-picker-element"></span>
+
+            <div #pickerElement class="circle sienna color-picker-element" [ngClass]="{'active': selectedColor === 3}"
+              (click)="currentSlide(3)"></div>
+          </div>
+
+          <div class="size-select" [@showHide]="!isVisible ? 'show' : 'hide'">
+            <div class="select-text">Select Your Size</div>
+            <div class="sizes">
+              <div class="selected">
+                <span>S</span>
+              </div>
+              <div>
+                <span>M</span>
+              </div>
+              <div>
+                <span>L</span>
+              </div>
+              <!-- <div class="size-guide-icon">
+                <img src="../assets/image/size-guide.png">
+              </div> -->
+            </div>
+          </div>
+
+          <div class="shop-now-button" [@slideUpDown]="isVisible ? 'up' : 'down'">
+            <button (click)="shopNow()" *ngIf="isVisible">
+              <span>Shop Now</span>
+            </button>
+            <button *ngIf="!isVisible">
+              <span>Buy Now</span>
+            </button>
+          </div>
+
+          <div fxLayout="row" class="thumbnail-content" [@showHide]="!isVisible ? 'show' : 'hide'">
+            <div>
+              <ol>
+                <li>
+                  <img src="../assets/image/headphone-usage-1.jpg" alt="headphone-usage-1">
+                </li>
+                <li>
+                  <img src="../assets/image/headphone-usage-2.jpg" alt="headphone-usage-2">
+                </li>
+                <li>
+                  <img src="../assets/image/headphone-usage-3.jpg" alt="headphone-usage-3">
+                </li>
+              </ol>
+            </div>
+          </div>
+
         </div>
+
       </div>
 
-      <div class="shop-now-button" [@slideUpDown]="isVisible ? 'up' : 'down'">
-        <button (click)="shopNow()" *ngIf="isVisible">
-          <span>Shop Now</span>
-        </button>
-        <button *ngIf="!isVisible">
-          <span>Buy Now</span>
-        </button>
-      </div>
+
     </div>
 
   </div>

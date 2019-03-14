@@ -10,13 +10,13 @@ export const mainAnimation = trigger('mainAnimation', [
 
 export const scaleUpDown = trigger('scaleUpDown', [
     state('scaleUp', style({
-        transform: 'scale(1.3)'
-    })),
-    state('scaleDown', style({
         transform: 'scale(1)'
     })),
+    state('scaleDown', style({
+        transform: 'scale(0.8)'
+    })),
     transition('scaleUp <=> scaleDown', [
-        animate('.3s')
+        animate('.5s ease-out')
     ])
 ]);
 
