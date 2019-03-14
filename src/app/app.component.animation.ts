@@ -3,7 +3,7 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
 export const scaleUpDown = trigger('scaleUpDown', [
     state('scaleUp', style({
         transform: 'scale(1)',
-        marginBottom: '5px'
+        marginBottom: '4px'
     })),
     state('scaleDown', style({
         transform: 'scale(0.8)',
