@@ -29,6 +29,9 @@ export class AppComponent implements AfterViewInit {
   constructor(private renderer: Renderer2) { }
 
   ngAfterViewInit(): void {
+    console.clear();
+
+    this.mySlides = this.slides.map(val => val.nativeElement);
     this.currentSlide(this.slideIndex);
   }
 
@@ -95,15 +98,14 @@ export class AppComponent implements AfterViewInit {
   }
 
   currentSlide(n: number): void {
-    this.mySlides = this.slides.map(val => val.nativeElement);
-    console.log(this.mySlides);
+    this.slideIndex = n;
 
     if (n > this.mySlides.length) { this.slideIndex = 1; }
 
     if (n < 1) { this.slideIndex = this.mySlides.length; }
 
     this.selectedColor = this.slideIndex;
-    this.showSlides(this.slideIndex);
+    this.showSlides(this.selectedColor);
   }
 
   showSlides(n: number): void {
