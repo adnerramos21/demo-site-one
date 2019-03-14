@@ -44,8 +44,8 @@
         </div>
       </div>
 
-      <a class="next up" (click)="slideUp(1)"><i class="fas fa-angle-up"></i></a>
-      <a class="prev down" (click)="slideDown(1)"><i class="fas fa-angle-down"></i></a>
+      <a class="next up" (click)="slideUp(1)" [@showHide]="isVisible ? 'show' : 'hide'"><i class="fas fa-angle-up"></i></a>
+      <a class="prev down" (click)="slideDown(1)" [@showHide]="isVisible ? 'show' : 'hide'"><i class="fas fa-angle-down"></i></a>
 
     </div>
 
@@ -84,15 +84,18 @@
       </div>
 
       <div class="color-picker">
-        <div #pickerElement class="circle chocolate color-picker-element" [ngClass]="{'active': selectedColor === 1}" (click)="currentSlide(1)"></div>
+        <div #pickerElement class="circle chocolate color-picker-element" [ngClass]="{'active': selectedColor === 1}"
+          (click)="currentSlide(1)"></div>
 
         <span #pickerElement class="color-picker-element"></span>
 
-        <div #pickerElement class="circle burlywood color-picker-element" [ngClass]="{'active': selectedColor === 2}" (click)="currentSlide(2)"></div>
+        <div #pickerElement class="circle burlywood color-picker-element" [ngClass]="{'active': selectedColor === 2}"
+          (click)="currentSlide(2)"></div>
 
         <span #pickerElement class="color-picker-element"></span>
 
-        <div #pickerElement class="circle sienna color-picker-element" [ngClass]="{'active': selectedColor === 3}" (click)="currentSlide(3)"></div>
+        <div #pickerElement class="circle sienna color-picker-element" [ngClass]="{'active': selectedColor === 3}"
+          (click)="currentSlide(3)"></div>
       </div>
 
       <div class="size-select" [@showHide]="!isVisible ? 'show' : 'hide'">
@@ -107,16 +110,18 @@
           <div>
             <span>L</span>
           </div>
-          <div class="size-guide-icon">
+          <!-- <div class="size-guide-icon">
             <img src="../assets/image/size-guide.png">
-          </div>
+          </div> -->
         </div>
       </div>
 
       <div class="shop-now-button" [@slideUpDown]="isVisible ? 'up' : 'down'">
-        <button (click)="shopNow()">
-          <span *ngIf="isVisible">Shop Now</span>
-          <span *ngIf="!isVisible">Buy Now</span>
+        <button (click)="shopNow()" *ngIf="isVisible">
+          <span>Shop Now</span>
+        </button>
+        <button *ngIf="!isVisible">
+          <span>Buy Now</span>
         </button>
       </div>
     </div>

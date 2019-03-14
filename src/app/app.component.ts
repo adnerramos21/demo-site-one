@@ -22,7 +22,7 @@ export class AppComponent implements AfterViewInit {
   isVisible = true;
   slideIndex = 1;
   targetObjCopy: object;
-  colors = ['#df5525', '#e1b277', '#8e5f47'];
+  colors = ['rgba(223, 85, 37, .75)', 'rgba(225, 178, 119, .80)', 'rgba(142, 95, 71, .85)'];
   selectedColor = 1;
 
   constructor(private renderer: Renderer2) { }

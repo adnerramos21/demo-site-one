@@ -22,10 +22,12 @@ export const scaleUpDown = trigger('scaleUpDown', [
 
 export const showHide = trigger('showHide', [
     state('show', style({
-        opacity: 1
+        opacity: 1,
+        visibility: 'visible'
     })),
     state('hide', style({
-        opacity: 0
+        opacity: 0,
+        visibility: 'hidden'
     })),
     transition('show <=> hide', [
         animate('.3s')
