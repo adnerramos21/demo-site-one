@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Project
 
-For this project I used greensock libray to facilitate the animation. If you want to see the project in action go to: https://aramos-demo-one.herokuapp.com/
+For this project I used greensock libray to facilitate the animation. 
 
 ## How does it work
 
